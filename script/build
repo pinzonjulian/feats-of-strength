@@ -1,0 +1,5 @@
+echo "🔨 Building gem"
+gem build feats_of_strength.gemspec
+
+echo "☁️ uploading artifact"
+buildkite-agent artifact upload feats_of_strength-*.gem

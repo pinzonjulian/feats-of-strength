@@ -1,0 +1,11 @@
+steps:
+  - label: ":wrench: Build"
+    command: script/build
+    key: "build"
+  - label: ":rocket: Publish"
+    key: "publish"
+    depends_on: "build"
+    plugins:
+      - publish-to-packages#v2.0.0:
+          artifacts: "feats_of_strength-*.gem"
+          registry: "vandelay-industries/the-festivus-vault"
